@@ -1,0 +1,37 @@
+.sidenav {
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(Grey, LightGrey);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left:0;
+  color: White;
+}
+
+.sidenav a:hover {
+  color: Blue;
+}
+
+h1 {
+  font-size: 45px;
+  padding-left: 20px;
+}
+
+h3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+button {
+  background-color: white;
+  color: Black;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.sidenav-list {
+  padding: 20px;
+}
