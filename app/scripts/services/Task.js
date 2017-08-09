@@ -4,10 +4,12 @@
 
     var ref = firebase.database().ref().child('tasks');
     var tasks = $firebaseArray(ref);
+
     Task.all = tasks;
 
-    Task.add = function(task) {
-      tasks.$add(task);
+    Task.add = function(newTask) {
+      newTask.createdAt = firebase.database.ServerValue.TIMESTAMP;
+      tasks.$add(newTask);
     };
 
     return Task;

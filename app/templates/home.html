@@ -1,17 +1,21 @@
 <div>
-  <aside class="sidenav">
-    <h1 class="sidenav-title">Blocitoff</h1>
-    <h3 class="links-container">Welcome! Create and update your to do list below.</h3>
-      <table class="sidenav-list">
-        <tr>
-          <td><button type="button" class="btn btn-default" ng-click="home.open()">Create New Task</button></td>
-        </tr>
-        <tr>
-          <td><button type="button" class="btn btn-default" ng-click="home.open()">View Active Tasks</button></td>
-        </tr>
-        <tr>
-          <td><button type="button" class="btn btn-default" ng-click="home.open()">View Completed Tasks</button></td>
-        </tr>
-      </table>
-  </aside>
+  <header>
+  <!--
+    <h1 class="header-title">Blocitoff</h1>
+      <button type="button" class="btn btn-default" ng-click="home.open()">Add New Task</button>
+      <button type="button" class="btn btn-default" ng-click="home.open()">View Active Tasks</button>
+      <button type="button" class="btn btn-default" ng-click="home.open()">View Completed Tasks</button>
+  -->
+</header>
+  <section>
+    <div class="container-fluid">
+      <div class="list-title"> Current Tasks </div>
+      <div class="list-container">
+        <div class="task-container" ng-repeat="task in home.tasks">
+          <div> {{ task.content }} </div>
+          <!--<div class="createdAt"> {{ task.createdAt | date : "shortTime" }} </div>-->
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
