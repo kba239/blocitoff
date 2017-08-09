@@ -2,23 +2,17 @@
   function HomeCtrl(Task) {
     var ctrl = this;
 
-    // ctrl.open = function() {
-    //   console.log("open");
-    //   //add uibModal
-    //
-    // };
-
-    // ctrl.activeTask;
+    ctrl.activeTasks;
     ctrl.tasks = Task.all;
 
-    // ctrl.selectTask = function(task) {
-    //   ctrl.activeTask = task;
-    // };
+    ctrl.showActive = function(task) {
+      ctrl.activeTasks = task;
+    };
 
 
   }
 
   angular
     .module('blocItOff')
-    .controller('HomeCtrl', ['Task', HomeCtrl]);
+    .controller('HomeCtrl', ['Task', 'List', HomeCtrl]);
 })();
