@@ -7,7 +7,7 @@
     ctrl.addTask = function() {
       if (this.text) {
         this.tasks.$add({
-          text: this.text-align,
+          text: this.text,
           timeDate: Date.now()
         });
         this.text = "";
