@@ -2,17 +2,26 @@
   function HomeCtrl(Task) {
     var ctrl = this;
 
-    ctrl.activeTasks;
     ctrl.tasks = Task.all;
 
-    ctrl.showActive = function(task) {
-      ctrl.activeTasks = task;
+    ctrl.addTask = function() {
+      if (this.text) {
+        this.tasks.$add({
+          text: this.text-align,
+          timeDate: Date.now()
+        });
+        this.text = "";
+      }
     };
 
-
+    ctrl.activeTasks = function (timeDate) {
+      if (timeDate > Date.now() - 604740) {
+        return true;
+      }
+    }
   }
 
   angular
     .module('blocItOff')
-    .controller('HomeCtrl', ['Task', 'List', HomeCtrl]);
+    .controller('HomeCtrl', ['Task', HomeCtrl]);
 })();

@@ -11,10 +11,14 @@
     <div class="container-fluid">
       <div class="list-title"> Current Tasks </div>
       <div class="list-container">
-        <div class="task-container" ng-repeat="task in home.tasks">
-          <div> {{ task.content }} </div>
-          <!--<div class="createdAt"> {{ task.createdAt | date : "shortTime" }} </div>-->
+        <div class="task-container" ng-repeat="tasks in home.tasks" ng-show="home.activeTasks(tasks.timeDate)">
+          <div> {{ tasks.text }} </div>
         </div>
+        <form ng-submit="home.addTask()">
+          Add your new task:
+          <input type="text" ng-model="task.text" name="text"/>
+          <input type="submit" id="submit" value="Submit"/>
+        </form>
       </div>
     </div>
   </section>
