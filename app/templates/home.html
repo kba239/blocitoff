@@ -1,19 +1,16 @@
-<div>
-  <header>
-  <!--
-    <h1 class="header-title">Blocitoff</h1>
-      <button type="button" class="btn btn-default" ng-click="home.open()">Add New Task</button>
-      <button type="button" class="btn btn-default" ng-click="home.open()">View Active Tasks</button>
-      <button type="button" class="btn btn-default" ng-click="home.open()">View Completed Tasks</button>
-  -->
-</header>
-  <section>
-    <div class="container-fluid">
-      <div class="list-title"> Current Tasks </div>
-      <div class="list-container">
-        <div class="task-container" ng-repeat="tasks in home.tasks" ng-show="home.activeTasks(tasks.timeDate)">
-          <div> {{ tasks.text }} </div>
-        </div>
+<nav class="navbar">
+  <div>
+    <a ui-sref="pastTasks" class="navbar-link">Past Tasks</a>
+  </div>
+</nav>
+<section>
+  <div class="container-fluid">
+    <div class="list-title"> Current Tasks </div>
+    <div class="list-container">
+      <div class="task-container" ng-repeat="task in home.tasks" ng-show="home.activeTasks(tasks.timeDate)">
+        <div> {{ task.text }} </div>
+      </div>
+      <div class="new-form-task">
         <form ng-submit="home.addTask()">
           Add your new task:
           <input type="text" ng-model="task.text" name="text"/>
@@ -21,5 +18,5 @@
         </form>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
