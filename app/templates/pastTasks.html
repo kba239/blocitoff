@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div>
+    <a ui-sref="tasks" class="navbar-link">Active Tasks</a>
+  </div>
+</nav>
+<section>
+  <div class="container-fluid">
+    <div class="list-title"> Expired and Completed Tasks </div>
+    <div class="list-container">
+      <div class="task-container" ng-repeat="task in pastTasks.tasks" ng-show="pastTasks.expiredTasks(tasks.timeDate) || pastTasks.completedTasks(tasks.completed)">
+        <div> {{ task.text }} </div>
+      </div>
+    </div>
+  </div>
+</section>
