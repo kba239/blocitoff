@@ -4,7 +4,7 @@
     <div class="list-container">
       <div class="task-container" ng-repeat="taskList in home.tasks"
         ng-hide="home.expiredTask(taskList.timeDate) || home.completedTask(taskList.completed)">
-        <div> {{ taskList.text }} </div>
+        <div> {{ taskList.text }}   --   {{ taskList.$priority }} </div>
       </div>
       <div class="new-form-task">
         <form ng-submit="home.addTask(home.data.selectedOption.name)">
