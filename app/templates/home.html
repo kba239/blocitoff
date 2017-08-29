@@ -2,14 +2,13 @@
   <div class="container-fluid">
     <div class="list-title"> Current Tasks </div>
     <div class="list-container">
-      <div class="task-container" ng-repeat="task in home.tasks"
-        ng-hide="home.expiredTask(tasks.timeDate) || home.completedTask(tasks.completed)">
-        <div> {{ task.text }}  --  {{ task.$priority }}</div>
+      <div class="task-container" ng-repeat="taskList in home.tasks"
+        ng-hide="home.expiredTask(taskList.timeDate) || home.completedTask(taskList.completed)">
+        <div> {{ taskList.text }} </div>
       </div>
       <div class="new-form-task">
         <form ng-submit="home.addTask(home.data.selectedOption.name)">
-          Add your new task:
-          <input type="text" ng-model="home.text" name="text" placeholder="Enter text here"/>
+          <input type="text" ng-model="home.text" name="text" placeholder="Enter your new task"/>
           <select name="mySelect" id="mySelect" ng-options="option.name for option in home.data.availableOptions track by option.id" ng-model="home.data.selectedOption"></select>
           <input type="submit" id="submit" value="Add Task" />
         </form>

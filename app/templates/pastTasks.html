@@ -2,9 +2,9 @@
   <div class="container-fluid">
     <div class="list-title"> Expired and Completed Tasks </div>
     <div class="list-container">
-      <div class="task-container" ng-repeat="task in pastTasks.tasks"
-        ng-show="pastTasks.expiredTask(tasks.timeDate) || pastTasks.completedTask(tasks.completed)">
-        <div> {{ task.text }} </div>
+      <div class="task-container" ng-repeat="taskList in pastTasks.tasks"
+        ng-show="pastTasks.expiredTask(taskList.timeDate) || pastTasks.completedTask(taskList.completed)">
+        <div> {{ taskList.text }} </div>
       </div>
     </div>
   </div>
