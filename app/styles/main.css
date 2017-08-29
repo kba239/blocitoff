@@ -21,10 +21,8 @@ h1 {
   padding:  15px 15px 15px 25px;
 }
 .container-fluid {
-  float: right;
   width: 50%;
   text-align: left;
-  margin-right: 25%;
   margin-top: 5%;
 }
 .task-container {

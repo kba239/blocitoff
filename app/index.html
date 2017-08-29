@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="blocItOff">
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     <title>Blocitoff</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
+
+  <nav class="navbar">
+    <div>
+      <a ui-sref="home" class="navbar-link">Active Tasks</a>
+      <a ui-sref="pastTasks" class="navbar-link">Past Tasks</a>
+    </div>
+  </nav>
 
     <ui-view></ui-view>
 
@@ -37,8 +46,8 @@
 
     <!-- Application Files -->
     <script src="/scripts/app.js"></script>
-    <script src="/scripts/controllers/HomeCtrl.js"></script>
-    <script src="/scripts/controllers/PastTasksCtrl.js"></script>
     <script src="/scripts/services/Task.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/PastTasksCtrl.js"></script>  
 </body>
 </html>
