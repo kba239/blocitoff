@@ -4,8 +4,14 @@
     var ref = firebase.database().ref().child('tasks');
     var tasks = $firebaseArray(ref);
 
+    var confirmCompleted = function (task) {
+      task.completed = true;
+      task.$save(task)
+    }
+
     return {
-      all: tasks
+      all: tasks,
+      completeTask: confirmCompleted,
     };
   }
 
