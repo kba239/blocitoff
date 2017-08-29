@@ -1,20 +1,17 @@
-<nav class="navbar">
-  <div>
-    <a ui-sref="pastTasks" class="navbar-link">Past Tasks</a>
-  </div>
-</nav>
 <section>
   <div class="container-fluid">
     <div class="list-title"> Current Tasks </div>
     <div class="list-container">
-      <div class="task-container" ng-repeat="task in home.tasks" ng-show="home.activeTasks(tasks.timeDate)">
-        <div> {{ task.text }} </div>
+      <div class="task-container" ng-repeat="task in home.tasks"
+        ng-hide="home.expiredTask(tasks.timeDate) || home.completedTask(tasks.completed)">
+        <div> {{ task.text }}  --  {{ task.$priority }}</div>
       </div>
       <div class="new-form-task">
-        <form ng-submit="home.addTask()">
+        <form ng-submit="home.addTask(home.data.selectedOption.name)">
           Add your new task:
-          <input type="text" ng-model="task.text" name="text"/>
-          <input type="submit" id="submit" value="Submit"/>
+          <input type="text" ng-model="home.text" name="text" placeholder="Enter text here"/>
+          <select name="mySelect" id="mySelect" ng-options="option.name for option in home.data.availableOptions track by option.id" ng-model="home.data.selectedOption"></select>
+          <input type="submit" id="submit" value="Add Task" />
         </form>
       </div>
     </div>

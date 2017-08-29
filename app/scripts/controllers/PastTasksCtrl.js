@@ -4,17 +4,19 @@
 
     ctrl.tasks = Task.all;
 
-    ctrl.expiredTasks = function (timeDate) {
-      if (timesDate < Date.now() - 604740) {
+    ctrl.expiredTask = function(timeDate) {
+      var sevenDays = 604740000;
+      var currentTimeDate = new Date().getTime();
+      if (currentTimeDate > (timeDate + sevenDays)) {
         return true;
       }
-    }
+    };
 
-    ctrl.completedTasks = function (task) {
-      if (task === true) {
+    ctrl.completedTask = function (completedStatus) {
+      if (completedStatus === "yes") {
         return true;
       }
-    }
+    };
 
   }
 
