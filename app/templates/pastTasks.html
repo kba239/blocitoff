@@ -4,7 +4,7 @@
     <div class="list-container">
       <div class="task-container" ng-repeat="taskList in pastTasks.tasks"
         ng-show="pastTasks.expiredTask(taskList.timeDate) || pastTasks.completedTask(taskList.completed)">
-        <div> {{ taskList.text }}   --   {{ taskList.$priority }} </div>
+        <div> {{ taskList.text }} </div>
       </div>
     </div>
   </div>

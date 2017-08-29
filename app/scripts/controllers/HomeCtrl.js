@@ -3,6 +3,10 @@
 
     this.tasks = Task.all;
 
+    this.updateTask = function (task) {
+      Task.completeTask(task);
+    }
+
     this.addTask = function(priority) {
       if (this.text) {
         this.tasks.$add({
