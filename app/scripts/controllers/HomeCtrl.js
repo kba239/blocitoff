@@ -1,36 +1,35 @@
 (function() {
   function HomeCtrl(Task) {
-    var ctrl = this;
 
-    ctrl.tasks = Task.all;
+    this.tasks = Task.all;
 
-    ctrl.expiredTask = function(timeDate) {
-      var sevenDays = 604740000;
+    this.addTask = function(priority) {
+      if (this.text) {
+        this.tasks.$add({
+          text: this.text,
+          completed: false,
+          timeDate: Date.now(),
+          $priority: priority
+        });
+        this.text = "";
+      }
+    }
+
+    this.expiredTask = function (timeDate) {
+      var sevenDays = 604800000;
       var currentTimeDate = new Date().getTime();
       if (currentTimeDate > (timeDate + sevenDays)) {
         return true;
       }
-    };
+    }
 
-    ctrl.completedTask = function (completedStatus) {
-      if (completedStatus === "yes") {
+    this.completedTask = function (task) {
+      if (task === true) {
         return true;
       }
-    };
+    }
 
-    ctrl.addTask = function(priority) {
-      if (this.text) {
-        this.tasks.$add({
-          text: this.text,
-          completed: "no",
-          timeDate: Date.now(),
-          $priority: "Low"
-        });
-        this.text = "";
-      }
-    };
-
-    ctrl.data = {
+    this.data = {
       availableOptions: [
         {id: '1', name: 'High'},
         {id: '2', name: 'Medium'},

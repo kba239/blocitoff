@@ -2,10 +2,10 @@
   function Task($firebaseArray) {
 
     var ref = firebase.database().ref().child('tasks');
-    this.tasks = $firebaseArray(ref);
+    var tasks = $firebaseArray(ref);
 
     return {
-      all: this.tasks,
+      all: tasks
     };
   }
 
