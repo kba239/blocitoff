@@ -12,4 +12,4 @@
 * Users can view their current list and a list of their completed or expired tasks
 
 
-####Blocitoff uses JavaScript, Angular, and Firebase.
+Blocitoff uses JavaScript, Angular, and Firebase.
